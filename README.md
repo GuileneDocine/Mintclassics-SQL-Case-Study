@@ -37,7 +37,9 @@ Business Insights – Connected technical results to strategic recommendations.
  Key Queries & Insights
  
 Revenue by Product Line
+
 sql
+
 SELECT pl.productLine,
        SUM(od.quantityOrdered * od.priceEach) AS total_revenue
 FROM productlines pl
@@ -45,10 +47,14 @@ JOIN products p ON pl.productLine = p.productLine
 JOIN orderdetails od ON p.productCode = od.productCode
 GROUP BY pl.productLine
 ORDER BY total_revenue DESC;
-Insight: Classic Cars dominate revenue, followed by Vintage Cars.
+
+Insight: 
+Classic Cars dominate revenue, followed by Vintage Cars.
 
 Top Customers by Payments
+
 sql
+
 SELECT c.customerName,
        SUM(p.amount) AS total_payments
 FROM customers c
@@ -56,24 +62,34 @@ JOIN payments p ON c.customerNumber = p.customerNumber
 GROUP BY c.customerName
 ORDER BY total_payments DESC
 LIMIT 10;
-Insight: A small group of high-credit customers account for the majority of payments.
+
+Insight: 
+A small group of high-credit customers account for the majority of payments.
 
 Warehouse Inventory Value
+
 sql
+
 SELECT w.warehouseName,
        SUM(p.quantityInStock * p.buyPrice) AS inventory_value
 FROM warehouses w
 JOIN products p ON w.warehouseCode = p.warehouseCode
 GROUP BY w.warehouseName
 ORDER BY inventory_value DESC;
-Insight: The South warehouse holds the highest inventory value (~75% capacity), while the West warehouse is underutilized.
+
+Insight: 
+The South warehouse holds the highest inventory value (~75% capacity), while the West warehouse is underutilized.
 
 Order Status & Shipping
+
 sql
+
 SELECT status, COUNT(*) AS total_orders
 FROM orders
 GROUP BY status;
-Insight: Most orders ship successfully, but disputes and cancellations highlight risks in customer satisfaction and credit management.
+
+Insight: 
+Most orders ship successfully, but disputes and cancellations highlight risks in customer satisfaction and credit management.
 
  Conclusions & Recommendations
  
