@@ -112,5 +112,3 @@ Technical skill: SQL joins, aggregations, grouping, filtering, calculations.
 Business acumen: Translating raw data into actionable insights.
 
 Communication: Clear recommendations aligned with business strategy.
-![Mintclassics SQL CASE-STUDY ](visuals/Mintclassics-SQL-CASE-STUDY-BY-GUILENE-DOCINE.pdf)
-
